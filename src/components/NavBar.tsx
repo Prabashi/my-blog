@@ -1,17 +1,26 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import '../styles/navBar.css';
 import {Link} from 'react-router-dom';
 import {FaBars, FaTimes} from 'react-icons/fa';
 
 const NavBar = () => {
     const [isShowMenu, setIsShowMenu] = useState(false);
+    const [isChangeHeaderBgColor, setIsChangeHeaderBgColor] = useState(false);
 
     const handleMenuIconClick = () => {
         setIsShowMenu(!isShowMenu);
     }
 
+    const handleHeaderBgColorChange = () => {
+        setIsChangeHeaderBgColor(window.screenY >= 100);
+    }
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleHeaderBgColorChange)
+    }, [])
+
   return (
-    <div className='nav-header'>
+    <div className={isChangeHeaderBgColor ? 'nav-header nav-header-bg' : 'nav-header'}>
         <Link to='/'>
             <h1>Portfolio</h1>
         </Link>
