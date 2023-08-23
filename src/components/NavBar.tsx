@@ -1,14 +1,21 @@
-import React from 'react';
-import '../styles/navbar.css';
+import React, {useState} from 'react';
+import '../styles/navBar.css';
 import {Link} from 'react-router-dom';
+import {FaBars, FaTimes} from 'react-icons/fa';
 
 const NavBar = () => {
+    const [isShowMenu, setIsShowMenu] = useState(false);
+
+    const handleMenuIconClick = () => {
+        setIsShowMenu(!isShowMenu);
+    }
+
   return (
-    <div className='header'>
+    <div className='nav-header'>
         <Link to='/'>
             <h1>Portfolio</h1>
         </Link>
-        <ul>
+        <ul className={isShowMenu ? 'nav-menu active' : 'nav-menu'}>
             <li>
                 <Link to='/'>
                     Home
@@ -30,6 +37,13 @@ const NavBar = () => {
                 </Link>
             </li>
         </ul>
+        <div className='hamburger'>
+            {isShowMenu ?
+                <FaTimes size={20} style={{color: 'grey'}} onClick={handleMenuIconClick} />
+            :
+                <FaBars size={20} style={{color: 'grey'}} onClick={handleMenuIconClick} />
+        }
+        </div>
     </div>
   )
 }
