@@ -1,0 +1,29 @@
+.card {
+    background: rgb(100, 86, 86);
+    padding: 1.2rem 1rem;
+}
+
+.card img {
+    width: 100%
+}
+
+.project-title {
+    color: black;
+    padding: 1rem 0;
+}
+
+.project-details {
+    padding-bottom: 1rem;
+    font-size: 1.1rem;
+    text-align: justify;
+}
+
+.project-btns {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+}
+
+.project-btns .btn {
+    padding: 0.5rem 1rem;
+}
