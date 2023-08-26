@@ -17,14 +17,14 @@ const Footer = () => {
                 <div className='phone'>
                     <h4>
                         <FaPhone size='20' style={{color: 'black', marginRight: '2rem'}} />
-                        +65 989 466 82
+                        +65 xxx xxx xx
                     </h4>
                     
                 </div>
                 <div className='email'>
                     <h4>
                         <FaMailBulk size='20' style={{color: 'black', marginRight: '2rem'}} />
-                        prabhashi.mm@gmail.com
+                        emailm@gmail.com
                     </h4>
                 </div>
             </div>
